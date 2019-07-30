@@ -1,0 +1,5 @@
+*.swp
+/files
+/debhelper-build-stamp
+.debhelper
+/slyther

@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+export DH_VERBOSE = 1
+
+# LINTIAN_PROFILE=ubuntu
+
+%:
+	dh $@ 
+
+override_dh_prep:
+	dh_prep
+	mkdir -p build/debian/stage/hicolor/256x256
+	mkdir -p build/debian/stage/hicolor/32x32
+	mkdir -p build/debian/stage/hicolor/16x16
+	cp src/main/resources/textures/icon.png build/debian/stage/hicolor/256x256/slyther.png
+	cp src/main/resources/textures/icon_32.png build/debian/stage/hicolor/32x32/slyther.png
+	cp src/main/resources/textures/icon_16.png build/debian/stage/hicolor/16x16/slyther.png
+
+override_dh_strip_nondeterminism:
+	echo "skip dh_strip_nondeterminism"
+

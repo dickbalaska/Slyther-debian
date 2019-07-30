@@ -1,0 +1,18 @@
+Source: slyther
+Section: games
+Priority: optional
+Maintainer: Dick Balaska <dick@buckosoft.com>
+Standards-Version: 4.1.2
+Homepage: https://github.com/dickbalaska/slyther
+Build-Depends:
+ debhelper (>= 10),
+ openjdk-8-jdk,
+ gradle-debian-helper,
+ libslf4j-java,
+ maven-repo-helper
+
+Package: slyther
+Architecture: all
+Depends: ${misc:Depends}, default-jre (>= 8), jarwrapper
+Description: Java implementation of the popular slither.io massively 
+ multiplayer game.

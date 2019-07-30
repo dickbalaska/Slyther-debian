@@ -1,0 +1,14 @@
+slyther for Debian
+-----------------
+
+Dick Balaska's slyther derives from gegy's Slyther.
+Debian wants lower case letters, hence the project name change.
+
+The root build.gradle builds the client jar.
+The server subdirectory build.gradle builds the server from the
+same source with a different entry point.
+
+
+
+ -- Dick Balaska <dick@buckosoft.com>  Tue, 02 Jul 2019 04:03:24 -0400
+
