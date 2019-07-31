@@ -1,0 +1,53 @@
+#!/bin/bash
+DIR=`basename $PWD`
+if [ x$DIR = xdebian ]; then
+	cd ..
+fi
+if [ ! -f build.gradle -o ! -d server -o ! -d debian ]; then
+	echo "Not a slyther source directory"
+	exit 1
+fi
+DEBVER=`head -1 debian/changelog |cut -d"(" -f2|cut -d")" -f1`
+SLYVER=`grep "version =" build.gradle |cut -f2 -d'"'`
+SLSVER=`grep "version =" server/build.gradle |cut -f2 -d'"'`
+INSVER=`grep build debian/slyther.install |head -1 | cut -f2 -d "-" |cut -f1-3 -d "."`
+POSVER=`grep VERSION debian/slyther.postinst |head -1 | cut -f2 -d '"'`
+MANVER=`grep Version debian/slyther.6 | head -1 | cut -f6 -d'"' |cut -f2 -d ' '`
+if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$SLSVER != x$SLYVER -o x$POSVER != x$SLYVER -o x$MANVER != x$SLYVER ]; then
+	echo "version mismatch:"
+	echo "SLYVER=$SLYVER	build.gradle"
+	echo "SLSVER=$SLSVER	server/build.gradle"
+	echo "DEBVER=$DEBVER	debian/changelog"
+	echo "INSVER=$INSVER	debian/slyther.install"
+	echo "POSVER=$POSVER	debian/slyther.postinst"
+	echo "MANVER=$MANVER	debian/slyther.6"
+	exit 1
+fi
+
+rm -f ../*.changes
+debuild -S -sa && \
+dput -f ppa:dickbalaska/slyther ../*.changes
+
+exit 0
+
+#################################
+BUILDDIR=/tmp/yamce
+RNAME=yamce-$YAMVER
+BZNAME=$RNAME.bz2
+
+rm -rf $BUILDDIR
+mkdir $BUILDDIR
+cd $BUILDDIR
+
+T=`ssh ringo ls -1 /Web/Bulk/yamce/yamce-0*`
+OLDRELEASE=basename $T
+git clone http://git.buckosoft.com/git/public/yamce.git
+rm -rf yamce/.git
+mv yamce $RNAME
+tar -cvjf $BZNAME $RNAME
+scp $BZNAME dick@ringo:/Web/Bulk/yamce
+ssh ringo /home/dick/bin/fixBulkYamce $OLDRELEASE $BZNAME
+rm $BZNAME
+
+
+echo done

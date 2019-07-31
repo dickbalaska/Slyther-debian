@@ -1,4 +1,4 @@
-.TH SLYTHER 6 "July 2019" "Dick Balaska" "Version 0.2.0" \" -*- nroff -*-
+.TH SLYTHER 6 "July 2019" "Dick Balaska" "Version 0.2.6" \" -*- nroff -*-
 .\" (C) Copyright 2019 Dick Balaska <dick@buckosoft.com>,
 .\"
 .\"
@@ -13,39 +13,33 @@
 .\" .sp <n>    insert n+1 empty lines
 .\" for manpage-specific macros, see man(7)
 .SH NAME
-slyther \- A clone of slither.io, a multiplayer snake game.
+slyther \- Eat and grow your snake.
 .SH SYNOPSIS
 .B slyther
-.RI [ options ] " files" ...
+.RI [ options ]
 .br
-.B bar
+.B slyther-server
 .RI [ options ] " files" ...
 .SH DESCRIPTION
 This manual page documents briefly the
 .B slyther
 and
-.B bar
+.B slyther-server
 commands.
 .PP
 .\" TeX users may be more comfortable with the \fB<whatever>\fP and
 .\" \fI<whatever>\fP escape sequences to invode bold face and italics,
 .\" respectively.
-\fBslyther\fP is a program that...
+\fBslyther\fP is a game where you grow your snake by eating. 
+Protect your face from other snakes or you will turn into food for them.
 .SH OPTIONS
-These programs follow the usual GNU command line syntax, with long
-options starting with two dashes (`-').
-A summary of options is included below.
-For a complete description, see the Info files.
 .TP
-.B \-h, \-\-help
-Show summary of options.
+.B \-d
+Enable debug to stdout
 .TP
 .B \-v, \-\-version
 Show version of program.
 .SH SEE ALSO
-.BR bar (1),
-.BR baz (1).
-.br
-The programs are documented fully by
-.IR "The Rise and Fall of a Fooish Bar" ,
-available via the Info system.
+Source code at github
+.UR https://github.com/dickbalaska/slyther
+.UE

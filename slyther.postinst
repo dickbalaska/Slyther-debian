@@ -17,13 +17,13 @@ set -e
 # for details, see https://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-V="$2"
+VERSION="0.2.6"
 
 case "$1" in
     configure)
 		cd /usr/share/java
 		rm -f slyther.jar
-		ln -s slyther-$V.jar slyther.jar
+		ln -s slyther-$VERSION.jar slyther.jar
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
