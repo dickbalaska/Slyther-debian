@@ -1,2 +1,2 @@
 #!/bin/sh
-jarwrapper /usr/share/java/slyther.jar
+jarwrapper /usr/share/java/slyther.jar $*
