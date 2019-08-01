@@ -19,7 +19,7 @@ slyther \- Eat and grow your snake.
 .RI [ options ]
 .br
 .B slyther-server
-.RI [ options ] " files" ...
+.RI [ options ]
 .SH DESCRIPTION
 This manual page documents briefly the
 .B slyther
@@ -37,8 +37,14 @@ Protect your face from other snakes or you will turn into food for them.
 .B \-d
 Enable debug to stdout
 .TP
-.B \-v, \-\-version
-Show version of program.
+.B \-v
+Show version of program and exit.
+.TP
+.B \-g <dir>
+Set the gameFolder directory, where user data is stored.
+.br
+The default for debian systems is 
+.B $HOME/.config/slyther
 .SH SEE ALSO
 Source code at github
 .UR https://github.com/dickbalaska/slyther
