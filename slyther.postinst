@@ -17,7 +17,7 @@ set -e
 # for details, see https://www.debian.org/doc/debian-policy/ or
 # the debian-policy package
 
-VERSION="0.2.6"
+VERSION="2.0.0"
 
 case "$1" in
     configure)

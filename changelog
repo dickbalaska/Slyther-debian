@@ -1,3 +1,9 @@
+slyther (2.0.0) bionic; urgency=low
+
+  * Initial release of slyther, the LWJGL2 edition
+
+ -- Dick Balaska <dick@buckosoft.com>  Thu, 01 Aug 2019 01:18:55 -0400
+
 slyther (0.2.6) bionic; urgency=low
 
   * Standing up launchpad build
