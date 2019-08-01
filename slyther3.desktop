@@ -1,10 +1,10 @@
 [Desktop Entry]
 Version=1.0
-Name=slyther
+Name=slyther3
 Comment=Eat and grow your snake
-Exec=slyther
+Exec=slyther3
 Terminal=false
 Type=Application
 StartupNotify=false
-Icon=slyther
+Icon=slyther3
 Categories=Game;ArcadeGame;ActionGame

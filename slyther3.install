@@ -1,0 +1,8 @@
+build/libs/slyther-0.3.0.jar usr/share/java
+server/build/libs/slyther-server-0.3.0.jar usr/share/java
+build/debian/stage/hicolor/256x256/slyther3.png usr/share/icons/hicolor/256x256/apps
+build/debian/stage/hicolor/32x32/slyther3.png usr/share/icons/hicolor/32x32/apps
+build/debian/stage/hicolor/16x16/slyther3.png usr/share/icons/hicolor/16x16/apps
+debian/slyther3.6 usr/share/man/man6
+debian/scripts/slyther3 usr/games
+debian/slyther3.desktop usr/share/applications
