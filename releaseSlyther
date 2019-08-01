@@ -13,8 +13,10 @@ SLSVER=`grep "version =" server/build.gradle |cut -f2 -d'"'`
 INSVER=`grep build debian/slyther.install |head -1 | cut -f2 -d "-" |cut -f1-3 -d "."`
 POSVER=`grep VERSION debian/slyther.postinst |head -1 | cut -f2 -d '"'`
 MANVER=`grep Version debian/slyther.6 | head -1 | cut -f6 -d'"' |cut -f2 -d ' '`
-if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$SLSVER != x$SLYVER -o x$POSVER != x$SLYVER -o x$MANVER != x$SLYVER ]; then
+SRCVER=`grep SlytherVersion src/main/java/net/gegy1000/slyther/Version.java | head -1 | cut -f2 -d'"'`
+if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$SLSVER != x$SLYVER -o x$POSVER != x$SLYVER -o x$MANVER != x$SLYVER -o x$SRCVER != x$SLYVER ]; then
 	echo "version mismatch:"
+	echo "SRCVER=$SRCVER	src/main/.../Version.java"
 	echo "SLYVER=$SLYVER	build.gradle"
 	echo "SLSVER=$SLSVER	server/build.gradle"
 	echo "DEBVER=$DEBVER	debian/changelog"
