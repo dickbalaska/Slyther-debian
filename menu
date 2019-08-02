@@ -1,2 +1,2 @@
-?package(slyther):needs="X11" section="Games/Action"\
-  title="slyther" command="/usr/games/slyther3"
+?package(slyther3):needs="X11" section="Games/Action"\
+  title="slyther3" command="/usr/games/slyther3"

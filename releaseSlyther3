@@ -20,9 +20,9 @@ if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$SLSVER != x$SLYVER -o x$P
 	echo "SLYVER=$SLYVER	build.gradle"
 	echo "SLSVER=$SLSVER	server/build.gradle"
 	echo "DEBVER=$DEBVER	debian/changelog"
-	echo "INSVER=$INSVER	debian/slyther.install"
-	echo "POSVER=$POSVER	debian/slyther.postinst"
-	echo "MANVER=$MANVER	debian/slyther.6"
+	echo "INSVER=$INSVER	debian/slyther3.install"
+	echo "POSVER=$POSVER	debian/slyther3.postinst"
+	echo "MANVER=$MANVER	debian/slyther3.6"
 	exit 1
 fi
 
