@@ -1,3 +1,9 @@
+slyther3 (3.0.0) bionic; urgency=low
+
+  * First slyther3 release
+
+ -- Dick Balaska <dick@buckosoft.com>  Sat, 10 Aug 2019 01:25:41 -0400
+
 slyther3 (0.3.4) bionic; urgency=low
 
   * Standing up debian slyther3 build
