@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+FILES="slytherlib/src/main/java/net/gegy1000/slyther/Version.java build.gradle debian/slyther3.install debian/slyther3.postinst debian/slyther3.6 debian/currentVersion"
+T="/tmp/slytherDebianTmp"
+T1="$T.1"
+
+if [ $# != 1 ]; then
+	echo "Usage: updateVersions new-version"
+	exit 1
+fi
+NEWVERSION=$1
+
+
+for i in $FILES ; do
+	if [ ! -f $i ]; then
+		echo "Does not appear to be a slyther3 root directory"
+		echo "$i does not exist"
+		exit 2
+	fi
+done
+
+OLDVERSION=`cat debian/currentVersion`
+echo "update from $OLDVERSION to $NEWVERSION"
+
+for i in $FILES ; do
+	sed -i -e s/$OLDVERSION/$NEWVERSION/g $i
+done
+
+echo "slyther3 ($NEWVERSION) bionic; urgency=low" >$T
+echo "" >>$T
+echo "  * " >>$T
+echo "" >>$T
+echo " -- Dick Balaska <dick@buckosoft.com> `date -R`" >>$T
+echo "" >>$T
+
+cat $T debian/changelog >$T1
+mv $T1 debian/changelog
+
+vi debian/changelog
