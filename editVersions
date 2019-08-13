@@ -1,1 +1,0 @@
-vi debian/changelog src/main/java/net/gegy1000/slyther/Version.java build.gradle server/build.gradle debian/slyther3.install debian/slyther3.postinst debian/slyther3.6
