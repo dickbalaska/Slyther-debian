@@ -30,7 +30,7 @@ echo "slyther3 ($NEWVERSION) bionic; urgency=low" >$T
 echo "" >>$T
 echo "  * " >>$T
 echo "" >>$T
-echo " -- Dick Balaska <dick@buckosoft.com> `date -R`" >>$T
+echo " -- Dick Balaska <dick@buckosoft.com>  `date -R`" >>$T
 echo "" >>$T
 
 cat $T debian/changelog >$T1
