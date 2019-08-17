@@ -9,16 +9,16 @@ if [ ! -f build.gradle -o ! -d server -o ! -d debian ]; then
 fi
 DEBVER=`head -1 debian/changelog |cut -d"(" -f2|cut -d")" -f1`
 SLYVER=`grep "version =" build.gradle |cut -f2 -d'"'`
-SLSVER=`grep "version =" server/build.gradle |cut -f2 -d'"'`
+#SLSVER=`grep "version =" server/build.gradle |cut -f2 -d'"'`
 INSVER=`grep build debian/slyther3.install |head -1 | cut -f2 -d "-" |cut -f1-3 -d "."`
 POSVER=`grep VERSION debian/slyther3.postinst |head -1 | cut -f2 -d '"'`
 MANVER=`grep Version debian/slyther3.6 | head -1 | cut -f6 -d'"' |cut -f2 -d ' '`
-SRCVER=`grep SlytherVersion src/main/java/net/gegy1000/slyther/Version.java | head -1 | cut -f2 -d'"'`
-if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$SLSVER != x$SLYVER -o x$POSVER != x$SLYVER -o x$MANVER != x$SLYVER -o x$SRCVER != x$SLYVER ]; then
+SRCVER=`grep SlytherVersion slytherlib/src/main/java/net/gegy1000/slyther/Version.java | head -1 | cut -f2 -d'"'`
+if [ x$DEBVER != x$SLYVER -o x$INSVER != x$SLYVER -o x$POSVER != x$SLYVER -o x$MANVER != x$SLYVER -o x$SRCVER != x$SLYVER ]; then
 	echo "version mismatch:"
 	echo "SRCVER=$SRCVER	src/main/.../Version.java"
 	echo "SLYVER=$SLYVER	build.gradle"
-	echo "SLSVER=$SLSVER	server/build.gradle"
+	#echo "SLSVER=$SLSVER	server/build.gradle"
 	echo "DEBVER=$DEBVER	debian/changelog"
 	echo "INSVER=$INSVER	debian/slyther3.install"
 	echo "POSVER=$POSVER	debian/slyther3.postinst"

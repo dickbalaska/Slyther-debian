@@ -1,3 +1,22 @@
+slyther3 (3.1.2) bionic; urgency=low
+
+  * More debian installer. Wants slyther3-server named slyther3-server
+
+ -- Dick Balaska <dick@buckosoft.com>  Sat, 17 Aug 2019 13:51:49 -0400
+
+slyther3 (3.1.1) bionic; urgency=low
+
+  * Fix debian installer
+
+ -- Dick Balaska <dick@buckosoft.com>  Sat, 17 Aug 2019 13:39:54 -0400
+
+slyther3 (3.1.0) bionic; urgency=low
+
+  * Split the source code up into 3 separate trees;
+    client, server, and common library.
+
+ -- Dick Balaska <dick@buckosoft.com>  Sat, 17 Aug 2019 12:47:39 -0400
+
 slyther3 (3.0.0) bionic; urgency=low
 
   * First slyther3 release

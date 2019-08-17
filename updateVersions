@@ -11,6 +11,11 @@ fi
 NEWVERSION=$1
 
 
+DIR=`basename $PWD`
+if [ x$DIR = xdebian ]; then
+	cd ..
+fi
+
 for i in $FILES ; do
 	if [ ! -f $i ]; then
 		echo "Does not appear to be a slyther3 root directory"
