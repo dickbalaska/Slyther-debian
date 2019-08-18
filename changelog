@@ -1,3 +1,10 @@
+slyther2 (2.1.0) bionic; urgency=low
+
+  * Split the source code into 3 separate packages;
+    client, server, lib.
+
+ -- Dick Balaska <dick@buckosoft.com>  Sat, 17 Aug 2019 21:21:16 -0400
+
 slyther (2.0.0) bionic; urgency=low
 
   * Initial release of slyther, the LWJGL2 edition

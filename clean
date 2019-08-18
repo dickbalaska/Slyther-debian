@@ -1,4 +1,8 @@
-build
-server/build
-bin
-server/bin
+build/
+client/build/
+slytherlib/build/
+server/build/
+bin/
+client/bin/
+slytherlib/bin/
+server/bin/

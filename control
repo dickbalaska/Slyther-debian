@@ -1,4 +1,4 @@
-Source: slyther
+Source: slyther2
 Section: games
 Priority: optional
 Maintainer: Dick Balaska <dick@buckosoft.com>
@@ -11,8 +11,9 @@ Build-Depends:
  libslf4j-java,
  maven-repo-helper
 
-Package: slyther
+Package: slyther2
 Architecture: all
+Replaces: slyther (<=2.0.0)
 Depends: ${misc:Depends}, default-jre (>= 8), jarwrapper
 Description: Java implementation of the popular slither.io massively 
  multiplayer game.

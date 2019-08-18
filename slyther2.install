@@ -1,0 +1,8 @@
+client/build/libs/slyther2-2.1.0.jar usr/share/java
+server/build/libs/slyther2-server-2.1.0.jar usr/share/java
+build/debian/stage/hicolor/256x256/slyther2.png usr/share/icons/hicolor/256x256/apps
+build/debian/stage/hicolor/32x32/slyther2.png usr/share/icons/hicolor/32x32/apps
+build/debian/stage/hicolor/16x16/slyther2.png usr/share/icons/hicolor/16x16/apps
+debian/slyther2.6 usr/share/man/man6
+debian/scripts/slyther2 usr/games
+debian/slyther2.desktop usr/share/applications
